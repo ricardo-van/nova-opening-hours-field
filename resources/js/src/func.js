@@ -48,7 +48,7 @@ export function getRandomTimeInterval() {
     let fromHour = Math.floor(Math.random() * 24)   // 0-23
     let toHour = fromHour + Math.floor(Math.random() * (24 - fromHour))
 
-    return '09:00-19:00'
+    return '08:00-19:00'
 }
 
 export function randomString() {

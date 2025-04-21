@@ -1,6 +1,8 @@
 <template>
     <input
-        :type="'text'"
+        :type="useTextInputs ? 'text' : 'time'"
+        :readonly="readonly"
+        @keydown="handleKeydown"
         class="form-control form-input form-input-bordered"
         :class="{ 'border-danger': !isValid }"
         v-model.lazy="time"
@@ -24,6 +26,7 @@ export default {
     data: function () {
         return {
             time: this.timeProp,
+            readonly: true
         }
     },
 
@@ -40,6 +43,16 @@ export default {
             this.$emit('updateTime', value)
         },
     },
+    methods: {
+        handleKeydown() {
+            readonly.value = false
+
+            // Restaurar readonly luego de unos milisegundos
+            setTimeout(() => {
+                readonly.value = true
+            }, 100)
+        }
+    }
 }
 </script>
 

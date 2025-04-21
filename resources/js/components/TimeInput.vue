@@ -45,11 +45,11 @@ export default {
     },
     methods: {
         handleKeydown() {
-            readonly.value = false
+            this.readonly = false
 
             // Restaurar readonly luego de unos milisegundos
             setTimeout(() => {
-                readonly.value = true
+                this.readonly = true
             }, 100)
         }
     }

@@ -1,6 +1,6 @@
 <template>
     <input
-        :type="useTextInputs ? 'text' : 'time'"
+        :type="'text'"
         class="form-control form-input form-input-bordered"
         :class="{ 'border-danger': !isValid }"
         v-model.lazy="time"
